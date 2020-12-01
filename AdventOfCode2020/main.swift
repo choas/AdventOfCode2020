@@ -7,6 +7,4 @@
 
 import Foundation
 
-print(aoc1_1())
-
-
+print(aoc1_2())
