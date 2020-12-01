@@ -7,5 +7,6 @@
 
 import Foundation
 
-print("Hello, World!")
+print(aoc1_1())
+
 
