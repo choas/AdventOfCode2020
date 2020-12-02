@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		72C026852576EC0B00C40B8C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C026842576EC0B00C40B8C /* main.swift */; };
 		72C0268D2576EC6900C40B8C /* AoC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C0268C2576EC6900C40B8C /* AoC1.swift */; };
+		72C026972577824900C40B8C /* AdventOfCode2020Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C026962577824900C40B8C /* AdventOfCode2020Test.swift */; };
+		72C0269E257782FF00C40B8C /* AoC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C0268C2576EC6900C40B8C /* AoC1.swift */; };
+		72C026A7257790D300C40B8C /* AoC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C026A6257790D300C40B8C /* AoC2.swift */; };
+		72C026AA257790D500C40B8C /* AoC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C026A6257790D300C40B8C /* AoC2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,10 +31,21 @@
 		72C026812576EC0B00C40B8C /* AdventOfCode2020 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode2020; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C026842576EC0B00C40B8C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		72C0268C2576EC6900C40B8C /* AoC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AoC1.swift; sourceTree = "<group>"; };
+		72C026942577824900C40B8C /* AdventOfCode2020Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCode2020Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72C026962577824900C40B8C /* AdventOfCode2020Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCode2020Test.swift; sourceTree = "<group>"; };
+		72C026982577824900C40B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72C026A6257790D300C40B8C /* AoC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AoC2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		72C0267E2576EC0B00C40B8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72C026912577824900C40B8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				72C026832576EC0B00C40B8C /* AdventOfCode2020 */,
+				72C026952577824900C40B8C /* AdventOfCode2020Test */,
 				72C026822576EC0B00C40B8C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				72C026812576EC0B00C40B8C /* AdventOfCode2020 */,
+				72C026942577824900C40B8C /* AdventOfCode2020Test.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,8 +78,18 @@
 			children = (
 				72C026842576EC0B00C40B8C /* main.swift */,
 				72C0268C2576EC6900C40B8C /* AoC1.swift */,
+				72C026A6257790D300C40B8C /* AoC2.swift */,
 			);
 			path = AdventOfCode2020;
+			sourceTree = "<group>";
+		};
+		72C026952577824900C40B8C /* AdventOfCode2020Test */ = {
+			isa = PBXGroup;
+			children = (
+				72C026962577824900C40B8C /* AdventOfCode2020Test.swift */,
+				72C026982577824900C40B8C /* Info.plist */,
+			);
+			path = AdventOfCode2020Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +112,23 @@
 			productReference = 72C026812576EC0B00C40B8C /* AdventOfCode2020 */;
 			productType = "com.apple.product-type.tool";
 		};
+		72C026932577824900C40B8C /* AdventOfCode2020Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72C026992577824900C40B8C /* Build configuration list for PBXNativeTarget "AdventOfCode2020Test" */;
+			buildPhases = (
+				72C026902577824900C40B8C /* Sources */,
+				72C026912577824900C40B8C /* Frameworks */,
+				72C026922577824900C40B8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdventOfCode2020Test;
+			productName = AdventOfCode2020Test;
+			productReference = 72C026942577824900C40B8C /* AdventOfCode2020Test.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +139,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					72C026802576EC0B00C40B8C = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					72C026932577824900C40B8C = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -113,9 +160,20 @@
 			projectRoot = "";
 			targets = (
 				72C026802576EC0B00C40B8C /* AdventOfCode2020 */,
+				72C026932577824900C40B8C /* AdventOfCode2020Test */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72C026922577824900C40B8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		72C0267D2576EC0B00C40B8C /* Sources */ = {
@@ -123,7 +181,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				72C026852576EC0B00C40B8C /* main.swift in Sources */,
+				72C026A7257790D300C40B8C /* AoC2.swift in Sources */,
 				72C0268D2576EC6900C40B8C /* AoC1.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72C026902577824900C40B8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72C026972577824900C40B8C /* AdventOfCode2020Test.swift in Sources */,
+				72C026AA257790D500C40B8C /* AoC2.swift in Sources */,
+				72C0269E257782FF00C40B8C /* AoC1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +336,42 @@
 			};
 			name = Release;
 		};
+		72C0269A2577824900C40B8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = D686LRX385;
+				INFOPLIST_FILE = AdventOfCode2020Test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.choas.macos.AdventOfCode2020Test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		72C0269B2577824900C40B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = D686LRX385;
+				INFOPLIST_FILE = AdventOfCode2020Test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.choas.macos.AdventOfCode2020Test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -284,6 +389,15 @@
 			buildConfigurations = (
 				72C026892576EC0B00C40B8C /* Debug */,
 				72C0268A2576EC0B00C40B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72C026992577824900C40B8C /* Build configuration list for PBXNativeTarget "AdventOfCode2020Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72C0269A2577824900C40B8C /* Debug */,
+				72C0269B2577824900C40B8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

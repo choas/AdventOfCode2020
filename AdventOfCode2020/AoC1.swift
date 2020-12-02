@@ -1,5 +1,5 @@
 //
-//  AoC1_1.swift
+//  AoC1.swift
 //  AdventOfCode2020
 //
 //  Created by Gregori, Lars on 01.12.20.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-func aoc1_1() -> String {
+func aoc1_1(fileName: String) -> Int? {
     
-    guard let data = read(file: "aoc1.txt") else {
-        return "ERROR"
+    guard let data = read(file: fileName) else {
+        return nil
     }
     let lines = data.split(separator: "\n")
     
@@ -21,22 +21,22 @@ func aoc1_1() -> String {
         expenseReportContainsNumber[number] = true;
     }
     
-    var result: String?
+    var result: Int?
     var index = 0
     repeat {
         if expenseReportContainsNumber[index] && expenseReportContainsNumber[2020 - index] {
-            result = "\(index * (2020 - index))"
+            result = index * (2020 - index)
         }
         index += 1
     } while index < 2020/2 && result == nil
     
-    return result ?? "?"
+    return result
 }
 
-func aoc1_2() -> String {
+func aoc1_2(fileName: String) -> Int? {
     
-    guard let data = read(file: "aoc1.txt") else {
-        return "ERROR"
+    guard let data = read(file: fileName) else {
+        return nil
     }
     let lines = data.split(separator: "\n")
     
@@ -47,7 +47,7 @@ func aoc1_2() -> String {
         expenseReportContainsNumber[number] = true;
     }
     
-    var result: String?
+    var result: Int?
     var index1 = 0
     repeat {
         if expenseReportContainsNumber[index1] {
@@ -55,7 +55,7 @@ func aoc1_2() -> String {
             var index3 = 2020 - index2 - index1
             repeat {
                 if expenseReportContainsNumber[index2] && expenseReportContainsNumber[index3] {
-                    result = "\(index1 * index2 * index3)"
+                    result = index1 * index2 * index3
                 }
                 index2 += 1
                 index3 -= 1
@@ -64,7 +64,7 @@ func aoc1_2() -> String {
         index1 += 1
     } while index1 < 2020 && result == nil
     
-    return result ?? "?"
+    return result
 }
 
 
@@ -78,10 +78,11 @@ func read(file fileName: String) -> String? {
     }
     
     do {
-        return try String(contentsOf: fileUrl as URL, encoding: String.Encoding.utf8)
+        return try String(contentsOf: fileUrl, encoding: String.Encoding.utf8)
         
     } catch {
         print("ERROR read file \(fileUrl)")
+        print(error)
         return nil
     }
 }
