@@ -22,11 +22,4 @@ class AdventOfCode2020Test: XCTestCase {
         XCTAssertEqual(aoc2_2(fileName: "aoc2_test.txt"), 1)
         XCTAssertEqual(aoc2_2(fileName: "aoc2.txt"), 404)
     }
-//    func testPerformanceExample() throws {
-//        // This is an example of a performance test case.
-//        measure {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
-
 }
