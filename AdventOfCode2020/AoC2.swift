@@ -47,13 +47,13 @@ func aoc2_2(fileName: String) -> Int? {
         
         if pos1 >= 1 && pos2 >= 1 {
             
-            let l1 = String(password[password.index(password.startIndex, offsetBy: pos1)])
-            let l2 = String(password[password.index(password.startIndex, offsetBy: pos2)])
+            let passwordLetterOne = password.str(at: pos1)
+            let passwordLetterTwo = password.str(at: pos2)
             
-            let isLetter1 = (l1 == letter)
-            let isLetter2 = (l2 == letter)
+            let isLetterOne = (passwordLetterOne == letter)
+            let isLetterTwo = (passwordLetterTwo == letter)
             
-            if (isLetter1 || isLetter2) && (isLetter1 != isLetter2) {
+            if exactlyOne(isLetterOne, isLetterTwo) {
                 passwordCorrectCount += 1
             }
         }
@@ -75,5 +75,16 @@ func readDatabase(_ lines: [String], completion: @escaping (Int, Int, String, St
         let password = items[1]
 
         completion(firstNumber, secondNumber, letter, password)
+    }
+}
+
+func exactlyOne(_ isLetterOne: Bool, _ isLetterTwo: Bool) -> Bool {
+    return ((isLetterOne || isLetterTwo) && (isLetterOne != isLetterTwo))
+}
+
+
+extension StringProtocol {
+    func str(at: Int) -> String {
+        String(self[index(startIndex, offsetBy: at)])
     }
 }
