@@ -9,18 +9,8 @@ import Foundation
 
 func aoc1_1(fileName: String) -> Int? {
     
-    guard let data = read(file: fileName) else {
-        return nil
-    }
-    let lines = data.split(separator: "\n")
-    
-    var expenseReportContainsNumber = Array(repeating: false, count: 2020)
-    
-    lines.forEach{ numberStr in
-        let number = Int(numberStr)!
-        expenseReportContainsNumber[number] = true;
-    }
-    
+    let expenseReportContainsNumber = getExpenseReportContainsNumber(fileName)
+
     var result: Int?
     var index = 0
     repeat {
@@ -35,17 +25,7 @@ func aoc1_1(fileName: String) -> Int? {
 
 func aoc1_2(fileName: String) -> Int? {
     
-    guard let data = read(file: fileName) else {
-        return nil
-    }
-    let lines = data.split(separator: "\n")
-    
-    var expenseReportContainsNumber = Array(repeating: false, count: 2020)
-    
-    lines.forEach{ numberStr in
-        let number = Int(numberStr)!
-        expenseReportContainsNumber[number] = true;
-    }
+    let expenseReportContainsNumber = getExpenseReportContainsNumber(fileName)
     
     var result: Int?
     var index1 = 0
@@ -86,3 +66,21 @@ func read(file fileName: String) -> String? {
         return nil
     }
 }
+
+func getExpenseReportContainsNumber(_ fileName: String) -> Array<Bool> {
+
+    guard let data = read(file: fileName) else {
+        return Array(repeating: false, count: 1)
+    }
+    let lines = data.split(separator: "\n")
+    
+    var expenseReportContainsNumber = Array(repeating: false, count: 2020)
+    
+    lines.forEach{ numberStr in
+        let number = Int(numberStr)!
+        expenseReportContainsNumber[number] = true;
+    }
+
+    return expenseReportContainsNumber
+}
+
