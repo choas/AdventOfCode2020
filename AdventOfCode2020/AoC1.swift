@@ -11,43 +11,33 @@ func aoc1_1(fileName: String) -> Int? {
     
     let expenseReportContainsNumber = getExpenseReportContainsNumber(fileName)
 
-    var result: Int?
-    var index = 0
-    repeat {
-        if expenseReportContainsNumber[index] && expenseReportContainsNumber[2020 - index] {
-            result = index * (2020 - index)
-        }
-        index += 1
-    } while index < 2020/2 && result == nil
+    let (index1, index2) = findPair(expenseReportContainsNumber, start: 0, end: 2020)
     
-    return result
+    return index1 * index2
 }
 
 func aoc1_2(fileName: String) -> Int? {
     
     let expenseReportContainsNumber = getExpenseReportContainsNumber(fileName)
     
-    var result: Int?
     var index1 = 0
     repeat {
         if expenseReportContainsNumber[index1] {
-            var index2 = index1 + 1
-            var index3 = 2020 - index2 - index1
-            repeat {
-                if expenseReportContainsNumber[index2] && expenseReportContainsNumber[index3] {
-                    result = index1 * index2 * index3
-                }
-                index2 += 1
-                index3 -= 1
-            } while index3 > index2 && result == nil
+            let start = index1 + 1
+            let end = 2020 - start - index1
+
+            let (index2, index3) = findPair(expenseReportContainsNumber, start: start, end: end)
+            if index2 > 0 && index3 > 0 {
+                return index1 * index2 * index3
+            }
         }
         index1 += 1
-    } while index1 < 2020 && result == nil
+    } while index1 < 2020
     
-    return result
+    return nil
 }
 
-func getExpenseReportContainsNumber(_ fileName: String) -> Array<Bool> {
+fileprivate func getExpenseReportContainsNumber(_ fileName: String) -> Array<Bool> {
 
     guard let data = readAoC(file: fileName) else {
         return Array(repeating: false, count: 1)
@@ -62,4 +52,20 @@ func getExpenseReportContainsNumber(_ fileName: String) -> Array<Bool> {
     }
 
     return expenseReportContainsNumber
+}
+
+fileprivate func findPair(_ expenseReportContainsNumber: [Bool], start: Int, end: Int) -> (Int, Int) {
+    
+    var index1 = start
+    var index2 = end
+    repeat {
+        if expenseReportContainsNumber[index1]
+            && expenseReportContainsNumber[index2] {
+            return (index1, index2)
+        }
+        index1 += 1
+        index2 -= 1
+    } while index1 < index2
+    
+    return (0, 0)
 }
