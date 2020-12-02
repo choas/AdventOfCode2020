@@ -7,4 +7,4 @@
 
 import Foundation
 
-print(aoc1_2(fileName: "aoc1.txt")!)
+print(aoc2_2(fileName: "aoc2.txt")!)

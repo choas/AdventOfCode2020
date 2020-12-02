@@ -47,32 +47,12 @@ func aoc1_2(fileName: String) -> Int? {
     return result
 }
 
-
-func read(file fileName: String) -> String? {
-    
-    let documentsUrl = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0] as NSURL
-    
-    guard let fileUrl = documentsUrl.appendingPathComponent(fileName) else {
-        print("ERROR \(fileName)")
-        return nil
-    }
-    
-    do {
-        return try String(contentsOf: fileUrl, encoding: String.Encoding.utf8)
-        
-    } catch {
-        print("ERROR read file \(fileUrl)")
-        print(error)
-        return nil
-    }
-}
-
 func getExpenseReportContainsNumber(_ fileName: String) -> Array<Bool> {
 
-    guard let data = read(file: fileName) else {
+    guard let data = readAoC(file: fileName) else {
         return Array(repeating: false, count: 1)
     }
-    let lines = data.split(separator: "\n")
+    let lines = data.components(separatedBy: "\n")
     
     var expenseReportContainsNumber = Array(repeating: false, count: 2020)
     
@@ -83,4 +63,3 @@ func getExpenseReportContainsNumber(_ fileName: String) -> Array<Bool> {
 
     return expenseReportContainsNumber
 }
-
