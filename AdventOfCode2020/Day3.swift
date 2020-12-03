@@ -15,7 +15,7 @@ struct Command {
 func aocDay3Part1(fileName: String) -> Int {
     
     let lines = readAoC(file: fileName)!.components(separatedBy: "\n")
-
+    
     let command = Command(horizontalSteps: 3, verticalSteps: 1)
     
     var vpos = 0
@@ -32,4 +32,36 @@ func aocDay3Part1(fileName: String) -> Int {
     } while vpos < (lines.count - command.verticalSteps)
     
     return foundTrees
+}
+
+func aocDay3Part2(fileName: String) -> Int {
+    
+    let lines = readAoC(file: fileName)!.components(separatedBy: "\n")
+    
+    let commands = [
+        Command(horizontalSteps: 1, verticalSteps: 1),
+        Command(horizontalSteps: 3, verticalSteps: 1),
+        Command(horizontalSteps: 5, verticalSteps: 1),
+        Command(horizontalSteps: 7, verticalSteps: 1),
+        Command(horizontalSteps: 1, verticalSteps: 2),
+    ]
+    var allfoundTrees:[Int] = []
+    
+    commands.forEach{command in
+        
+        var vpos = 0
+        var hpos = 0
+        var foundTrees = 0
+        
+        repeat {
+            vpos += command.verticalSteps
+            hpos = (hpos + command.horizontalSteps) % lines[vpos].count
+            let item = lines[vpos].str(at: hpos)
+            if item == "#" {
+                foundTrees += 1
+            }
+        } while vpos < (lines.count - command.verticalSteps)
+        allfoundTrees.append(foundTrees)
+    }
+    return allfoundTrees.reduce(1, *)
 }
