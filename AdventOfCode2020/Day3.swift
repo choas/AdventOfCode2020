@@ -7,31 +7,13 @@
 
 import Foundation
 
-struct Command {
-    var horizontalSteps: Int // from letf to right
-    var verticalSteps: Int // from top to bottom
-}
-
 func aocDay3Part1(fileName: String) -> Int {
     
     let lines = readAoC(file: fileName)!.components(separatedBy: "\n")
     
     let command = Command(horizontalSteps: 3, verticalSteps: 1)
     
-    var vpos = 0
-    var hpos = 0
-    var foundTrees = 0
-    
-    repeat {
-        vpos += command.verticalSteps
-        hpos = (hpos + command.horizontalSteps) % lines[vpos].count
-        let item = lines[vpos].str(at: hpos)
-        if item == "#" {
-            foundTrees += 1
-        }
-    } while vpos < (lines.count - command.verticalSteps)
-    
-    return foundTrees
+    return countTrees(command, lines)
 }
 
 func aocDay3Part2(fileName: String) -> Int {
@@ -48,20 +30,30 @@ func aocDay3Part2(fileName: String) -> Int {
     var allfoundTrees:[Int] = []
     
     commands.forEach{command in
-        
-        var vpos = 0
-        var hpos = 0
-        var foundTrees = 0
-        
-        repeat {
-            vpos += command.verticalSteps
-            hpos = (hpos + command.horizontalSteps) % lines[vpos].count
-            let item = lines[vpos].str(at: hpos)
-            if item == "#" {
-                foundTrees += 1
-            }
-        } while vpos < (lines.count - command.verticalSteps)
+        let foundTrees = countTrees(command, lines)
         allfoundTrees.append(foundTrees)
     }
     return allfoundTrees.reduce(1, *)
+}
+
+struct Command {
+    var horizontalSteps: Int // from left to right
+    var verticalSteps: Int // from top to bottom
+}
+
+fileprivate func countTrees(_ command: Command, _ lines: [String]) -> Int {
+    var vpos = 0
+    var hpos = 0
+    var foundTrees = 0
+    
+    repeat {
+        vpos += command.verticalSteps
+        hpos = (hpos + command.horizontalSteps) % lines[vpos].count
+        let item = lines[vpos].str(at: hpos)
+        if item == "#" {
+            foundTrees += 1
+        }
+    } while vpos < (lines.count - command.verticalSteps)
+    
+    return foundTrees
 }
