@@ -17,3 +17,10 @@ func readAoC(file fileName: String) -> String? {
     
     return try! String(contentsOf: fileUrl, encoding: String.Encoding.utf8)
 }
+
+
+extension StringProtocol {
+    func str(at: Int) -> String {
+        String(self[index(startIndex, offsetBy: at)])
+    }
+}

@@ -82,9 +82,3 @@ func exactlyOne(_ isLetterOne: Bool, _ isLetterTwo: Bool) -> Bool {
     return ((isLetterOne || isLetterTwo) && (isLetterOne != isLetterTwo))
 }
 
-
-extension StringProtocol {
-    func str(at: Int) -> String {
-        String(self[index(startIndex, offsetBy: at)])
-    }
-}
