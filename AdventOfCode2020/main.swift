@@ -7,4 +7,4 @@
 
 import Foundation
 
-print(aocDay4Part2(fileName: "aoc4.txt"))
+print(aocDay5Part2(fileName: "aoc5.txt"))

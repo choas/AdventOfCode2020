@@ -45,5 +45,6 @@ class AdventOfCode2020Test: XCTestCase {
         XCTAssertEqual(seatIdToNumber(seatId: "BBFFBBFRLL"), 820)
         XCTAssertEqual(aocDay5Part1(fileName: "aoc5_test.txt"), 820)
         XCTAssertEqual(aocDay5Part1(fileName: "aoc5.txt"), 801)
+        XCTAssertEqual(aocDay5Part2(fileName: "aoc5.txt"), 597)
     }
 }
