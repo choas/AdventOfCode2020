@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2020 Lars Gregori
+//
+// SPDX-License-Identifier: MIT
+
 //
 //  AdventOfCode2020Test.swift
 //  AdventOfCode2020Test
