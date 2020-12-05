@@ -65,13 +65,11 @@ func aocDay4Part2(fileName: String) -> Int {
                 let cmI = value.components(separatedBy: "cm")
                 let inI = value.components(separatedBy: "in")
 
-                if cmI.count == 2 {
-                    let cmV = Int(cmI[0])
-                    return cmV != nil && cmV! >= 150 && cmV! <= 193
+                if cmI.count == 2, let cmV = Int(cmI[0]) {
+                    return cmV >= 150 && cmV <= 193
                 }
-                if inI.count == 2 {
-                    let inV = Int(inI[0])
-                    return inV != nil && inV! >= 59 && inV! <= 76
+                if inI.count == 2, let inV = Int(inI[0]) {
+                    return inV >= 59 && inV <= 76
                 }
             }
             return false
