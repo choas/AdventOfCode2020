@@ -8,19 +8,19 @@
 import Foundation
 
 func readAoC(file fileName: String) -> String? {
-    
+
     let homeDirectoryUrl = FileManager.default.homeDirectoryForCurrentUser
-    
+
     let fileUrl = homeDirectoryUrl
         .appendingPathComponent("AoC2020")
         .appendingPathComponent(fileName)
-    
+
+    // swiftlint:disable force_try
     return try! String(contentsOf: fileUrl, encoding: String.Encoding.utf8)
 }
 
-
 extension StringProtocol {
-    func str(at: Int) -> String {
-        String(self[index(startIndex, offsetBy: at)])
+    func str(at offsetBy: Int) -> String {
+        String(self[index(startIndex, offsetBy: offsetBy)])
     }
 }

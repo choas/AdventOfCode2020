@@ -12,10 +12,8 @@ func aocDay5Part1(fileName: String) -> Int {
     let seats = getSeats(fileName)
     
     var maxSeatId = 0
-    for id in 0..<seats.count {
-        if seats[id] {
-            maxSeatId = max(maxSeatId, id)
-        }
+    for index in 0..<seats.count where seats[index] {
+        maxSeatId = max(maxSeatId, index)
     }
     return maxSeatId
 }
@@ -25,15 +23,14 @@ func aocDay5Part2(fileName: String) -> Int {
     let seats = getSeats(fileName)
     
     var missingSeat = -1
-    for id in 1..<seats.count - 1 {
-        if !seats[id] && seats[id - 1] && seats[id + 1] {
-            missingSeat = id
+    for index in 1..<seats.count - 1 {
+        if !seats[index] && seats[index - 1] && seats[index + 1] {
+            missingSeat = index
         }
     }
     
     return missingSeat
 }
-
 
 func seatIdToNumber(seatId: String) -> Int {
     let binaryString = seatId
@@ -50,11 +47,11 @@ func getSeats(_ fileName: String) -> [Bool] {
     
     let maxSeats = calcMaxSeats(countChars: lines[0].count)
     var seats = [Bool](repeating: false, count: maxSeats )
-    lines.forEach{seatId in
+    lines.forEach {seatId in
         let seatIdNumber = seatIdToNumber(seatId: seatId)
         seats[seatIdNumber] = true
     }
-
+    
     return seats
 }
 

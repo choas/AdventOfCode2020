@@ -8,18 +8,18 @@
 import Foundation
 
 func aoc1_1(fileName: String) -> Int? {
-    
+
     let expenseReportContainsNumber = getExpenseReportContainsNumber(fileName)
 
     let (index1, index2) = findPair(expenseReportContainsNumber, start: 0, end: 2020)
-    
+
     return index1 * index2
 }
 
 func aoc1_2(fileName: String) -> Int? {
-    
+
     let expenseReportContainsNumber = getExpenseReportContainsNumber(fileName)
-    
+
     var index1 = 0
     repeat {
         if expenseReportContainsNumber[index1] {
@@ -33,29 +33,29 @@ func aoc1_2(fileName: String) -> Int? {
         }
         index1 += 1
     } while index1 < 2020
-    
+
     return nil
 }
 
-fileprivate func getExpenseReportContainsNumber(_ fileName: String) -> Array<Bool> {
+private func getExpenseReportContainsNumber(_ fileName: String) -> [Bool] {
 
     guard let data = readAoC(file: fileName) else {
         return Array(repeating: false, count: 1)
     }
     let lines = data.components(separatedBy: "\n")
-    
+
     var expenseReportContainsNumber = Array(repeating: false, count: 2020)
-    
-    lines.forEach{ numberStr in
+
+    lines.forEach { numberStr in
         let number = Int(numberStr)!
-        expenseReportContainsNumber[number] = true;
+        expenseReportContainsNumber[number] = true
     }
 
     return expenseReportContainsNumber
 }
 
-fileprivate func findPair(_ expenseReportContainsNumber: [Bool], start: Int, end: Int) -> (Int, Int) {
-    
+private func findPair(_ expenseReportContainsNumber: [Bool], start: Int, end: Int) -> (Int, Int) {
+
     var index1 = start
     var index2 = end
     repeat {
@@ -66,6 +66,6 @@ fileprivate func findPair(_ expenseReportContainsNumber: [Bool], start: Int, end
         index1 += 1
         index2 -= 1
     } while index1 < index2
-    
+
     return (0, 0)
 }
