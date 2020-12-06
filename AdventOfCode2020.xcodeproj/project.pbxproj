@@ -11,6 +11,8 @@
 		7258C31F2579805200672D5B /* Day3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258C3142578EAB200672D5B /* Day3.swift */; };
 		7258C329257A1CDC00672D5B /* Day4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258C328257A1CDC00672D5B /* Day4.swift */; };
 		7258C32A257A1CDC00672D5B /* Day4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258C328257A1CDC00672D5B /* Day4.swift */; };
+		727BC596257CF68500E229D9 /* Day6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727BC595257CF68500E229D9 /* Day6.swift */; };
+		727BC599257CF69000E229D9 /* Day6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727BC595257CF68500E229D9 /* Day6.swift */; };
 		72845990257B9CD60061E990 /* Day5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284598F257B9CD60061E990 /* Day5.swift */; };
 		72845991257B9CD60061E990 /* Day5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284598F257B9CD60061E990 /* Day5.swift */; };
 		72C026852576EC0B00C40B8C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C026842576EC0B00C40B8C /* main.swift */; };
@@ -38,6 +40,7 @@
 /* Begin PBXFileReference section */
 		7258C3142578EAB200672D5B /* Day3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3.swift; sourceTree = "<group>"; };
 		7258C328257A1CDC00672D5B /* Day4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day4.swift; sourceTree = "<group>"; };
+		727BC595257CF68500E229D9 /* Day6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day6.swift; sourceTree = "<group>"; };
 		7284598F257B9CD60061E990 /* Day5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day5.swift; sourceTree = "<group>"; };
 		72C026812576EC0B00C40B8C /* AdventOfCode2020 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode2020; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C026842576EC0B00C40B8C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 				7258C3142578EAB200672D5B /* Day3.swift */,
 				7258C328257A1CDC00672D5B /* Day4.swift */,
 				7284598F257B9CD60061E990 /* Day5.swift */,
+				727BC595257CF68500E229D9 /* Day6.swift */,
 				72C026AD257830B600C40B8C /* util.swift */,
 			);
 			path = AdventOfCode2020;
@@ -219,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7258C3152578EAB200672D5B /* Day3.swift in Sources */,
+				727BC596257CF68500E229D9 /* Day6.swift in Sources */,
 				72845990257B9CD60061E990 /* Day5.swift in Sources */,
 				7258C329257A1CDC00672D5B /* Day4.swift in Sources */,
 				72C026852576EC0B00C40B8C /* main.swift in Sources */,
@@ -233,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72C026972577824900C40B8C /* AdventOfCode2020Test.swift in Sources */,
+				727BC599257CF69000E229D9 /* Day6.swift in Sources */,
 				72845991257B9CD60061E990 /* Day5.swift in Sources */,
 				7258C32A257A1CDC00672D5B /* Day4.swift in Sources */,
 				7258C31F2579805200672D5B /* Day3.swift in Sources */,
