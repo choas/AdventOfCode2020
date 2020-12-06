@@ -8,33 +8,13 @@
 import Foundation
 
 func aocDay6Part1(fileName: String) -> Int {
-    let lines = readAoC(file: fileName)!.components(separatedBy: "\n")
-
-    var count = 0
-    let answers = getAnswers(lines)
-
-    answers.forEach { answerGroup in
-        count = answerGroup.answers.reduce(count) {counter, answer in
-            return answer.value > 0 ? counter + 1 : counter
-        }
-    }
-
-    return count
+    let answers = getAnswers(fileName: fileName)
+    return sum(answers: answers, forAnyone: true)
 }
 
 func aocDay6Part2(fileName: String) -> Int {
-    let lines = readAoC(file: fileName)!.components(separatedBy: "\n")
-
-    var count = 0
-    let answers = getAnswers(lines)
-
-    answers.forEach { answerPerGroup in
-        count = answerPerGroup.answers.reduce(count) {counter, answer in
-            return answer.value == answerPerGroup.persons ? counter + 1 : counter
-        }
-    }
-
-    return count
+    let answers = getAnswers(fileName: fileName)
+    return sum(answers: answers, forAnyone: false)
 }
 
 struct GroupAnswer {
@@ -42,7 +22,23 @@ struct GroupAnswer {
     var answers: [String: Int]
 }
 
-private func getAnswers(_ lines: [String]) -> [GroupAnswer] {
+private func sum(answers: [GroupAnswer], forAnyone: Bool) -> Int {
+    var count = 0
+    answers.forEach { answersPerGroup in
+        count = answersPerGroup.answers.reduce(count) {counter, answer in
+            if forAnyone {
+                return answer.value > 0 ? counter + 1 : counter
+            } else {
+                return answer.value == answersPerGroup.persons ? counter + 1 : counter
+            }
+        }
+    }
+    return count
+}
+
+private func getAnswers(fileName: String) -> [GroupAnswer] {
+
+    let lines = readAoC(file: fileName)!.components(separatedBy: "\n")
 
     var answers: [GroupAnswer] = []
     var answersPerGroup: [String: Int] = [:]
