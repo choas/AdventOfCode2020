@@ -24,26 +24,25 @@ struct GroupAnswer {
 
 private func getAnswers(fileName: String) -> [GroupAnswer] {
 
-    let lines = readAoC(file: fileName)!.components(separatedBy: "\n")
+    let lines = readAoC(file: fileName)!
+    let groups = lines.components(separatedBy: "\n\n")
 
     var answers: [GroupAnswer] = []
-    var answersPerGroup: [String: Int] = [:]
-    var personCount = 0
 
-    lines.forEach { line in
-        if line.count == 0 {
-            answers.append(GroupAnswer(persons: personCount, answers: answersPerGroup))
-            answersPerGroup = [:]
-            personCount = 0
-        } else {
-            personCount += 1
-            line.forEach { char in
+    groups.forEach {group in
+
+        var answersPerGroup: [String: Int] = [:]
+        let answersPerPerson = group.components(separatedBy: "\n")
+
+        answersPerPerson.forEach {answerPerPerson in
+
+            answerPerPerson.forEach { char in
                 let answer = answersPerGroup[String(char)]
                 answersPerGroup[String(char)] = answer != nil ? answer! + 1 : 1
             }
         }
+        answers.append(GroupAnswer(persons: answersPerPerson.count, answers: answersPerGroup))
     }
-    answers.append(GroupAnswer(persons: personCount, answers: answersPerGroup))
 
     return answers
 }
