@@ -22,20 +22,6 @@ struct GroupAnswer {
     var answers: [String: Int]
 }
 
-private func sum(answers: [GroupAnswer], forAnyone: Bool) -> Int {
-    var count = 0
-    answers.forEach { answersPerGroup in
-        count = answersPerGroup.answers.reduce(count) {counter, answer in
-            if forAnyone {
-                return answer.value > 0 ? counter + 1 : counter
-            } else {
-                return answer.value == answersPerGroup.persons ? counter + 1 : counter
-            }
-        }
-    }
-    return count
-}
-
 private func getAnswers(fileName: String) -> [GroupAnswer] {
 
     let lines = readAoC(file: fileName)!.components(separatedBy: "\n")
@@ -60,4 +46,19 @@ private func getAnswers(fileName: String) -> [GroupAnswer] {
     answers.append(GroupAnswer(persons: personCount, answers: answersPerGroup))
 
     return answers
+}
+
+private func sum(answers: [GroupAnswer], forAnyone: Bool) -> Int {
+    var count = 0
+    answers.forEach { answersPerGroup in
+        count = answersPerGroup.answers.reduce(count) {counter, answer in
+            let answerCount = answer.value
+            if forAnyone {
+                return answerCount > 0 ? counter + 1 : counter
+            } else {
+                return answerCount == answersPerGroup.persons ? counter + 1 : counter
+            }
+        }
+    }
+    return count
 }
