@@ -13,3 +13,7 @@ This year I'm implementing it with Swift.
 ## AoC files
 
 In case you want to run it on your machine you need to change the path in util.swift or create a link.
+
+## License
+
+This project is licensed under the MIT License except as noted otherwise in the [LICENSE](/LICENSES/MIT.txt).
