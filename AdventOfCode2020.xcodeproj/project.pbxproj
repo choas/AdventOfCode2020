@@ -23,6 +23,8 @@
 		72C026AA257790D500C40B8C /* Day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C026A6257790D300C40B8C /* Day2.swift */; };
 		72C026AE257830B600C40B8C /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C026AD257830B600C40B8C /* util.swift */; };
 		72C026B12578314D00C40B8C /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C026AD257830B600C40B8C /* util.swift */; };
+		72DAE24E257EBB1700FBD89E /* Day7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DAE24D257EBB1700FBD89E /* Day7.swift */; };
+		72DAE24F257EBB1700FBD89E /* Day7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DAE24D257EBB1700FBD89E /* Day7.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +52,7 @@
 		72C026982577824900C40B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72C026A6257790D300C40B8C /* Day2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2.swift; sourceTree = "<group>"; };
 		72C026AD257830B600C40B8C /* util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = util.swift; sourceTree = "<group>"; };
+		72DAE24D257EBB1700FBD89E /* Day7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day7.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 				7258C328257A1CDC00672D5B /* Day4.swift */,
 				7284598F257B9CD60061E990 /* Day5.swift */,
 				727BC595257CF68500E229D9 /* Day6.swift */,
+				72DAE24D257EBB1700FBD89E /* Day7.swift */,
 				72C026AD257830B600C40B8C /* util.swift */,
 			);
 			path = AdventOfCode2020;
@@ -229,6 +233,7 @@
 				72C026852576EC0B00C40B8C /* main.swift in Sources */,
 				72C026A7257790D300C40B8C /* Day2.swift in Sources */,
 				72C0268D2576EC6900C40B8C /* Day1.swift in Sources */,
+				72DAE24E257EBB1700FBD89E /* Day7.swift in Sources */,
 				72C026AE257830B600C40B8C /* util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +249,7 @@
 				7258C31F2579805200672D5B /* Day3.swift in Sources */,
 				72C026AA257790D500C40B8C /* Day2.swift in Sources */,
 				72C0269E257782FF00C40B8C /* Day1.swift in Sources */,
+				72DAE24F257EBB1700FBD89E /* Day7.swift in Sources */,
 				72C026B12578314D00C40B8C /* util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
