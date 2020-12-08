@@ -40,7 +40,7 @@ func aocDay3Part2(fileName: String) -> Int {
     return allfoundTrees.reduce(1, *)
 }
 
-struct Command {
+private struct Command {
     var horizontalSteps: Int // from left to right
     var verticalSteps: Int // from top to bottom
 }

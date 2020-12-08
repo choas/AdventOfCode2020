@@ -13,28 +13,28 @@ import XCTest
 
 class AdventOfCode2020Test: XCTestCase {
 
-    func testDay1() throws {
+    func zzztestDay1() throws {
         XCTAssertEqual(aoc1_1(fileName: "aoc1_test.txt"), 514579)
         XCTAssertEqual(aoc1_1(fileName: "aoc1.txt"), 888331)
         XCTAssertEqual(aoc1_2(fileName: "aoc1_test.txt"), 241861950)
         XCTAssertEqual(aoc1_2(fileName: "aoc1.txt"), 130933530)
     }
 
-    func testDay2() throws {
+    func zzztestDay2() throws {
         XCTAssertEqual(aoc2_1(fileName: "aoc2_test.txt"), 2)
         XCTAssertEqual(aoc2_1(fileName: "aoc2.txt"), 603)
         XCTAssertEqual(aoc2_2(fileName: "aoc2_test.txt"), 1)
         XCTAssertEqual(aoc2_2(fileName: "aoc2.txt"), 404)
     }
 
-    func testDay3() throws {
+    func zzztestDay3() throws {
         XCTAssertEqual(aocDay3Part1(fileName: "aoc3_test.txt"), 7)
         XCTAssertEqual(aocDay3Part1(fileName: "aoc3.txt"), 200)
         XCTAssertEqual(aocDay3Part2(fileName: "aoc3_test.txt"), 336)
         XCTAssertEqual(aocDay3Part2(fileName: "aoc3.txt"), 3737923200)
     }
 
-    func testDay4() throws {
+    func zzztestDay4() throws {
         XCTAssertEqual(aocDay4Part1(fileName: "aoc4_test.txt"), 2)
         XCTAssertEqual(aocDay4Part1(fileName: "aoc4.txt"), 192)
         XCTAssertEqual(aocDay4Part2(fileName: "aoc4_test2invalid.txt"), 0)
@@ -42,7 +42,7 @@ class AdventOfCode2020Test: XCTestCase {
         XCTAssertEqual(aocDay4Part2(fileName: "aoc4.txt"), 101)
     }
 
-    func testDay5() throws {
+    func zzztestDay5() throws {
         XCTAssertEqual(seatIdToNumber(seatId: "FBFBBFFRLR"), 357)
         XCTAssertEqual(seatIdToNumber(seatId: "BFFFBBFRRR"), 567)
         XCTAssertEqual(seatIdToNumber(seatId: "FFFBBBFRRR"), 119)
@@ -52,16 +52,24 @@ class AdventOfCode2020Test: XCTestCase {
         XCTAssertEqual(aocDay5Part2(fileName: "aoc5.txt"), 597)
     }
 
-    func testDay6() throws {
+    func zzztestDay6() throws {
         XCTAssertEqual(aocDay6Part1(fileName: "aoc6_test.txt"), 11)
         XCTAssertEqual(aocDay6Part1(fileName: "aoc6.txt"), 6625)
         XCTAssertEqual(aocDay6Part2(fileName: "aoc6_test.txt"), 6)
         XCTAssertEqual(aocDay6Part2(fileName: "aoc6.txt"), 3360)
     }
 
-    func testDay7() throws {
+    func zzztestDay7() throws {
         XCTAssertEqual(aocDay7Part1(fileName: "aoc7_test.txt"), 4)
         XCTAssertEqual(aocDay7Part1(fileName: "aoc7.txt"), 348)
-//        XCTAssertEqual(aocDay7Part1(fileName: "aoc7_test.txt"), 4)
+//        XCTAssertEqual(aocDay7Part2(fileName: "aoc7_test.txt"), 32)
+//        XCTAssertEqual(aocDay7Part2(fileName: "aoc7_test_part2.txt"), 126)
+    }
+
+    func testDay8() throws {
+        XCTAssertEqual(aocDay8Part1(fileName: "aoc8_test.txt"), 5)
+        XCTAssertEqual(aocDay8Part1(fileName: "aoc8.txt"), 1337)
+        XCTAssertEqual(aocDay8Part2(fileName: "aoc8_test.txt"), 8)
+        XCTAssertEqual(aocDay8Part2(fileName: "aoc8.txt"), 1358)
     }
 }
