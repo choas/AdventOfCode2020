@@ -76,5 +76,7 @@ class AdventOfCode2020Test: XCTestCase {
     func testDay9() throws {
         XCTAssertEqual(aocDay9Part1(fileName: "aoc9_test.txt", preambleSize: 5), 127)
         XCTAssertEqual(aocDay9Part1(fileName: "aoc9.txt", preambleSize: 25), 1124361034)
+        XCTAssertEqual(aocDay9Part2(fileName: "aoc9_test.txt", preambleSize: 5), 62)
+        XCTAssertEqual(aocDay9Part2(fileName: "aoc9.txt", preambleSize: 25), 129444555)
     }
 }

@@ -16,11 +16,11 @@ func aocDay9Part1(fileName: String, preambleSize: Int) -> Int {
     var isValid: Bool
     repeat {
         isValid = false
-        for nnn in validIndex - preambleSize ..< validIndex {
-            let num1 = codes[nnn]
-            for sss in nnn ..< validIndex {
-                let num2 = codes[sss]
-                if num1 + num2 == codes[validIndex] {
+        for firstNumberIndex in validIndex - preambleSize ..< validIndex {
+            let firstNumber = codes[firstNumberIndex]
+            for secondNumberIndex in firstNumberIndex ..< validIndex {
+                let secondNumber = codes[secondNumberIndex]
+                if firstNumber + secondNumber == codes[validIndex] {
                     isValid = true
                 }
             }
@@ -41,18 +41,21 @@ func aocDay9Part2(fileName: String, preambleSize: Int) -> Int {
     var minNum = 0
     var maxNum = 0
 
-    for nnn in 0 ..< codes.count - 1 {
-        var sum = codes[nnn]
-        var sss = nnn + 1
-        minNum = sum
-        maxNum = sum
+    for startIndex in 0 ..< codes.count - 1 {
+        let firstNumber = codes[startIndex]
+        var sum = firstNumber
+        minNum = firstNumber
+        maxNum = firstNumber
+
+        var secondIndex = startIndex + 1
+
         repeat {
-            let nuu = codes[sss]
-            sum += nuu
-            minNum = min(minNum, nuu)
-            maxNum = max(maxNum, nuu)
-            sss += 1
-        } while sss < codes.count && sum < invalidNumber
+            let nextNumber = codes[secondIndex]
+            sum += nextNumber
+            minNum = min(minNum, nextNumber)
+            maxNum = max(maxNum, nextNumber)
+            secondIndex += 1
+        } while secondIndex < codes.count && sum < invalidNumber
 
         if sum == invalidNumber {
             return minNum + maxNum
