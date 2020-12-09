@@ -32,7 +32,32 @@ func aocDay9Part1(fileName: String, preambleSize: Int) -> Int {
     return codes[validIndex - 1]
 }
 
-func aocDay9Part2(fileName: String) -> Int {
+func aocDay9Part2(fileName: String, preambleSize: Int) -> Int {
+
+    let codes = getCodes(fileName: fileName)
+
+    let invalidNumber = aocDay9Part1(fileName: fileName, preambleSize: preambleSize)
+
+    var minNum = 0
+    var maxNum = 0
+
+    for nnn in 0 ..< codes.count - 1 {
+        var sum = codes[nnn]
+        var sss = nnn + 1
+        minNum = sum
+        maxNum = sum
+        repeat {
+            let nuu = codes[sss]
+            sum += nuu
+            minNum = min(minNum, nuu)
+            maxNum = max(maxNum, nuu)
+            sss += 1
+        } while sss < codes.count && sum < invalidNumber
+
+        if sum == invalidNumber {
+            return minNum + maxNum
+        }
+    }
 
     return 0
 }
