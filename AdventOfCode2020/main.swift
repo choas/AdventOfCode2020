@@ -11,7 +11,8 @@
 
 import Foundation
 
-print(aocDay8Part2(fileName: "aoc8.txt"))
+print(aocDay9Part1(fileName: "aoc9_test.txt", preambleSize: 5))
+print(aocDay9Part1(fileName: "aoc9.txt", preambleSize: 25))
 
 // TODO day 7 part 2
 // print(aocDay7Part2(fileName: "aoc7.txt")) //_part2.txt"))
