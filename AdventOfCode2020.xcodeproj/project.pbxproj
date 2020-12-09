@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7201FCE825809EBA0033D5F7 /* Day9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201FCE725809EBA0033D5F7 /* Day9.swift */; };
+		7201FCE925809EBA0033D5F7 /* Day9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201FCE725809EBA0033D5F7 /* Day9.swift */; };
 		7258C3152578EAB200672D5B /* Day3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258C3142578EAB200672D5B /* Day3.swift */; };
 		7258C31F2579805200672D5B /* Day3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258C3142578EAB200672D5B /* Day3.swift */; };
 		7258C329257A1CDC00672D5B /* Day4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258C328257A1CDC00672D5B /* Day4.swift */; };
@@ -42,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7201FCE725809EBA0033D5F7 /* Day9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day9.swift; sourceTree = "<group>"; };
 		7258C3142578EAB200672D5B /* Day3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3.swift; sourceTree = "<group>"; };
 		7258C328257A1CDC00672D5B /* Day4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day4.swift; sourceTree = "<group>"; };
 		727BC595257CF68500E229D9 /* Day6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day6.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 				727BC595257CF68500E229D9 /* Day6.swift */,
 				72DAE24D257EBB1700FBD89E /* Day7.swift */,
 				72DAE256257F6F1400FBD89E /* Day8.swift */,
+				7201FCE725809EBA0033D5F7 /* Day9.swift */,
 				72C026AD257830B600C40B8C /* util.swift */,
 			);
 			path = AdventOfCode2020;
@@ -236,6 +240,7 @@
 				72845990257B9CD60061E990 /* Day5.swift in Sources */,
 				7258C329257A1CDC00672D5B /* Day4.swift in Sources */,
 				72C026852576EC0B00C40B8C /* main.swift in Sources */,
+				7201FCE825809EBA0033D5F7 /* Day9.swift in Sources */,
 				72C026A7257790D300C40B8C /* Day2.swift in Sources */,
 				72C0268D2576EC6900C40B8C /* Day1.swift in Sources */,
 				72DAE24E257EBB1700FBD89E /* Day7.swift in Sources */,
@@ -253,6 +258,7 @@
 				72845991257B9CD60061E990 /* Day5.swift in Sources */,
 				7258C32A257A1CDC00672D5B /* Day4.swift in Sources */,
 				7258C31F2579805200672D5B /* Day3.swift in Sources */,
+				7201FCE925809EBA0033D5F7 /* Day9.swift in Sources */,
 				72C026AA257790D500C40B8C /* Day2.swift in Sources */,
 				72C0269E257782FF00C40B8C /* Day1.swift in Sources */,
 				72DAE24F257EBB1700FBD89E /* Day7.swift in Sources */,
