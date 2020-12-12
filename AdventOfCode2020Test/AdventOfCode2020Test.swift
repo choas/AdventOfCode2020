@@ -94,6 +94,7 @@ class AdventOfCode2020Test: XCTestCase {
     }
 
     func testDay12() throws {
-        XCTAssertEqual(aocDay12Part1(fileName: "aoc12_test.txt"), 0)
+        XCTAssertEqual(aocDay12Part1(fileName: "aoc12_test.txt"), 25)
+        XCTAssertEqual(aocDay12Part1(fileName: "aoc12.txt"), 445)
     }
 }

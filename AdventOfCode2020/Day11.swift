@@ -35,16 +35,16 @@ private func countOccupiedSeats(fileName: String, tooOccupied: Int, lookAtDirect
     }
 }
 
-typealias Ferry = [[Seat]]
+private typealias Ferry = [[Seat]]
 
-enum Seat: String {
+private enum Seat: String {
     case floor = "."
     case empty = "L"
     case occupied = "#"
     case unknown = "?"
 }
 
-enum Direction: Int {
+private enum Direction: Int {
     // swiftlint:disable identifier_name
     case left, leftUp, up, rightUp, right, rightDown, down, leftDown
 }
@@ -96,7 +96,7 @@ private func next(ferry: Ferry, tooOccupied: Int, lookAtDirectNeighbour: Bool) -
     return (next, hasSeatsChanged)
 }
 
-struct Position {
+private struct Position {
     var row: Int
     var col: Int
 }
@@ -131,7 +131,7 @@ private func countNeighbours(at position: Position, of ferry: Ferry, _ lookAtDir
     return neighbour.countOccupied()
 }
 
-class Neighbour {
+private class Neighbour {
     var seats: [Seat]
 
     init() {
@@ -154,7 +154,7 @@ class Neighbour {
 }
 
 extension Ferry {
-    func seat(_ row: Int, _ col: Int) -> Seat {
+    fileprivate func seat(_ row: Int, _ col: Int) -> Seat {
         if row < 0 || col < 0 || row >= self[0].count || col >= self.count {
             return .unknown
         }
