@@ -11,7 +11,10 @@
 
 import Foundation
 
-print(aocDay10Part1(fileName: "aoc10.txt"))
+print(aocDay11Part1(fileName: "aoc11.txt"))
+
+// TODO day 10 part 2
+// print(aocDay10Part2(fileName: "aoc10_test2.txt"))
 
 // TODO day 7 part 2
 // print(aocDay7Part2(fileName: "aoc7.txt")) //_part2.txt"))
