@@ -97,6 +97,6 @@ class AdventOfCode2020Test: XCTestCase {
         XCTAssertEqual(aocDay12Part1(fileName: "aoc12_test.txt"), 25)
         XCTAssertEqual(aocDay12Part1(fileName: "aoc12.txt"), 445)
         XCTAssertEqual(aocDay12Part2(fileName: "aoc12_test.txt"), 286)
-
+        XCTAssertEqual(aocDay12Part2(fileName: "aoc12.txt"), 42495)
     }
 }
