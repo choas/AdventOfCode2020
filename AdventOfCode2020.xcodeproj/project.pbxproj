@@ -22,7 +22,7 @@
 		72845990257B9CD60061E990 /* Day5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284598F257B9CD60061E990 /* Day5.swift */; };
 		72845991257B9CD60061E990 /* Day5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284598F257B9CD60061E990 /* Day5.swift */; };
 		72B20A7625853EEA009A73D3 /* Day12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B20A7525853EEA009A73D3 /* Day12.swift */; };
-		72B20A7725853EEA009A73D3 /* Day12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B20A7525853EEA009A73D3 /* Day12.swift */; };
+		72B20A7E258588B6009A73D3 /* Day12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B20A7525853EEA009A73D3 /* Day12.swift */; };
 		72C026852576EC0B00C40B8C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C026842576EC0B00C40B8C /* main.swift */; };
 		72C0268D2576EC6900C40B8C /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C0268C2576EC6900C40B8C /* Day1.swift */; };
 		72C026972577824900C40B8C /* AdventOfCode2020Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C026962577824900C40B8C /* AdventOfCode2020Test.swift */; };
@@ -278,7 +278,7 @@
 				7201FCE925809EBA0033D5F7 /* Day9.swift in Sources */,
 				72C026AA257790D500C40B8C /* Day2.swift in Sources */,
 				72C0269E257782FF00C40B8C /* Day1.swift in Sources */,
-				72B20A7725853EEA009A73D3 /* Day12.swift in Sources */,
+				72B20A7E258588B6009A73D3 /* Day12.swift in Sources */,
 				72DAE24F257EBB1700FBD89E /* Day7.swift in Sources */,
 				72C026B12578314D00C40B8C /* util.swift in Sources */,
 			);

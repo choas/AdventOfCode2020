@@ -10,7 +10,6 @@ import Foundation
 func aocDay12Part1(fileName: String) -> Int {
 
     let navs = getNavigations(fileName: fileName)
-    print(navs)
 
     let ship = Ship(direction: .east)
     navs.forEach {nav in
@@ -38,6 +37,77 @@ func aocDay12Part1(fileName: String) -> Int {
     return ship.manhattanDistance()
 }
 
+func aocDay12Part2(fileName: String) -> Int {
+
+    let navs = getNavigations(fileName: fileName)
+
+    let ship = ShipWithWaypoints(waypointsEast: 10, waypointsNorth: 1)
+    navs.forEach {nav in
+
+        switch nav.action {
+        case "N":
+            ship.move(.north, nav.value)
+        case "S":
+            ship.move(.south, nav.value)
+        case "E":
+            ship.move(.east, nav.value)
+        case "W":
+            ship.move(.west, nav.value)
+        case "L":
+            ship.turnLeft(degrees: nav.value)
+        case "R":
+            ship.turnRight(degrees: nav.value)
+        case "F":
+            ship.forward(value: nav.value)
+        default:
+            print("unknown action", nav)
+        }
+    }
+
+    return ship.manhattanDistance()
+}
+
+private class ShipWithWaypoints {
+    var waypoints = [Int](repeating: 0, count: 4)
+    var pos = [Int](repeating: 0, count: 4)
+
+    init(waypointsEast: Int, waypointsNorth: Int) {
+        self.waypoints[Direction.east.rawValue] = waypointsEast
+        self.waypoints[Direction.north.rawValue] = waypointsNorth
+    }
+
+    func forward(value: Int) {
+        for dir in 0 ..< 4 {
+            self.pos[dir] += self.waypoints[dir] * value
+        }
+    }
+    func move(_ direction: Direction, _ value: Int) {
+        self.waypoints[direction.rawValue] += value
+    }
+    func turnLeft(degrees: Int) {
+        let steps: Int = -degrees / 90
+
+        var newWaypoint = [Int](repeating: 0, count: 4)
+
+        for dir in 0 ..< 4 {
+            let newDir = steps < 0 ? 4 + steps + dir : dir + steps
+            newWaypoint[newDir % 4] = self.waypoints[dir]
+        }
+        print(self.waypoints)
+
+        self.waypoints = newWaypoint
+
+        print(self.waypoints)
+    }
+    func turnRight(degrees: Int) {
+        turnLeft(degrees: -degrees)
+    }
+    func manhattanDistance() -> Int {
+        return abs(self.pos[Direction.east.rawValue] - self.pos[Direction.west.rawValue]) +
+            abs(self.pos[Direction.south.rawValue] - self.pos[Direction.north.rawValue])
+    }
+}
+
 private class Ship {
     var direction: Direction
     var pos = [Int](repeating: 0, count: 4)
@@ -58,7 +128,6 @@ private class Ship {
             steps = 4 + steps
         }
         self.direction = Direction(rawValue: (self.direction.rawValue + steps) % 4)!
-        print(self.direction)
     }
     func turnRight(degrees: Int) {
         turnLeft(degrees: -degrees)
