@@ -62,8 +62,8 @@ class AdventOfCode2020Test: XCTestCase {
     func zzztestDay7() throws {
         XCTAssertEqual(aocDay7Part1(fileName: "aoc7_test.txt"), 4)
         XCTAssertEqual(aocDay7Part1(fileName: "aoc7.txt"), 348)
-//        XCTAssertEqual(aocDay7Part2(fileName: "aoc7_test.txt"), 32)
-//        XCTAssertEqual(aocDay7Part2(fileName: "aoc7_test_part2.txt"), 126)
+        //        XCTAssertEqual(aocDay7Part2(fileName: "aoc7_test.txt"), 32)
+        //        XCTAssertEqual(aocDay7Part2(fileName: "aoc7_test_part2.txt"), 126)
     }
 
     func zzztestDay8() throws {
@@ -103,10 +103,16 @@ class AdventOfCode2020Test: XCTestCase {
         XCTAssertEqual(aocDay13Part1(fileName: "aoc13_test.txt"), 295)
         XCTAssertEqual(aocDay13Part1(fileName: "aoc13.txt"), 6568)
         XCTAssertEqual(aocDay13Part2(fileName: "aoc13_test.txt"), 1068781)
-        // XCTAssertEqual(aocDay13Part1(fileName: "aoc13.txt"), 6568)
+        // XCTAssertEqual(aocDay13Part2(fileName: "aoc13.txt"), 6568)
     }
     func testDay14() throws {
         XCTAssertEqual(aocDay14Part1(fileName: "aoc14_test.txt"), 165)
         XCTAssertEqual(aocDay14Part1(fileName: "aoc14.txt"), 10885823581193)
+
+        let (maskFloating, _) = createMaskFloating(mask: "000000000000000000000000000000X1001X", memAddress: 42)
+        XCTAssertEqual(maskFloating, "000000000000000000000000000000X1101X")
+        XCTAssertEqual(address36bit("111100100101011010111101001100010011"), 65052332819)
+        XCTAssertEqual(aocDay14Part2(fileName: "aoc14_test2.txt"), 208)
+        XCTAssertEqual(aocDay14Part2(fileName: "aoc14.txt"), 3816594901962)
     }
 }

@@ -11,37 +11,124 @@ func aocDay14Part1(fileName: String) -> Int {
 
     let prgs = getProgram(fileName: fileName)
 
-    var mem = [Int](repeating: 0, count: 64 * 1024)
+    var memory = [Int](repeating: 0, count: 64 * 1024)
 
     prgs.forEach { prg in
-        prg.mem.forEach {mmm in
+        prg.mem.forEach {mem in
 
-            let bin = String(mmm.value, radix: 2)
-            var bin2 = ""
-            var pppM = prg.mask.count - 1
-            var pppV = bin.count - 1
+            let binaryPrgMem = String(mem.value, radix: 2)
+            var binaryValue = ""
+            var indexMask = prg.mask.count - 1
+            var indexMem = binaryPrgMem.count - 1
             repeat {
-                let mstr = prg.mask.str(at: pppM)
+                let mstr = prg.mask.str(at: indexMask)
                 if mstr != "X" {
-                    bin2 = mstr + bin2
+                    binaryValue = mstr + binaryValue
                 } else {
-                    if pppV >= 0 {
-                        bin2 = bin.str(at: pppV) + bin2
+                    if indexMem >= 0 {
+                        binaryValue = binaryPrgMem.str(at: indexMem) + binaryValue
                     } else {
-                        bin2 = "0" + bin2
+                        binaryValue = "0" + binaryValue
                     }
                 }
-                pppM -= 1
-                pppV -= 1
-            } while pppM >= 0
-            let vvv2 = Int(bin2, radix: 2)!
-            mem[mmm.address] = vvv2
+                indexMask -= 1
+                indexMem -= 1
+            } while indexMask >= 0
+            let value = Int(binaryValue, radix: 2)!
+            memory[mem.address] = value
         }
     }
 
-    return mem.reduce(0) {counter, vvv in
+    return memory.reduce(0) {counter, vvv in
         return counter + vvv
     }
+}
+
+func aocDay14Part2(fileName: String) -> Int {
+
+    let prgs = getProgram(fileName: fileName)
+
+    var memory: [Double: Double] = [:]
+
+    prgs.forEach { prg in
+        prg.mem.forEach {mem in
+
+            let (maskFloating, countFloating) = createMaskFloating(mask: prg.mask, memAddress: mem.address)
+
+            for floatingNumber in 0 ..< Int(pow(Double(2), Double(countFloating))) {
+                var binaryAddress = ""
+                let binaryFloatingNumber = String(floatingNumber, radix: 2)
+                var indexBinaryFloatingNumber = binaryFloatingNumber.count - 1
+                var indexMaskFloating = maskFloating.count - 1
+                repeat {
+
+                    let maskFloatingChar = maskFloating.str(at: indexMaskFloating)
+                    if maskFloatingChar == "X" {
+                        if indexBinaryFloatingNumber >= 0 {
+                            binaryAddress = binaryFloatingNumber.str(at: indexBinaryFloatingNumber) + binaryAddress
+                        } else {
+                            binaryAddress = "0" + binaryAddress
+                        }
+                        indexBinaryFloatingNumber -= 1
+                    } else {
+                        binaryAddress = maskFloatingChar + binaryAddress
+                    }
+
+                    indexMaskFloating -= 1
+                } while indexMaskFloating >= 0
+
+                let address36 = address36bit(binaryAddress)
+                memory[address36] = Double(mem.value)
+            }
+        }
+    }
+
+    let sumValues: Double = memory.reduce(0) {counter, memoryItem in
+        counter + memoryItem.value
+    }
+
+    print(sumValues, Int(sumValues))
+    return Int(sumValues)
+}
+
+func createMaskFloating(mask: String, memAddress: Int) -> (String, Int) {
+
+    let memAddress = String(memAddress, radix: 2)
+    var maskFloating = ""
+    var indexMask = mask.count - 1
+    var indexMemAddress = memAddress.count - 1
+
+    var countFloating = 0
+
+    repeat {
+        let maskChar = mask.str(at: indexMask)
+        if maskChar == "1" {
+            maskFloating = "1" + maskFloating
+        } else if maskChar == "0" {
+            if indexMemAddress >= 0 {
+                maskFloating = memAddress.str(at: indexMemAddress) + maskFloating
+            } else {
+                maskFloating = "0" + maskFloating
+            }
+        } else {
+            maskFloating = "X" + maskFloating
+            countFloating += 1
+        }
+        indexMask -= 1
+        indexMemAddress -= 1
+    } while indexMask >= 0
+
+    return (maskFloating, countFloating)
+}
+
+func address36bit(_ binaryAddress: String) -> Double {
+    let binaryAddressPart1 = binaryAddress[0..<32]
+    let binaryAddressPart2 = binaryAddress[32...]
+
+    let addressPart1 = Double(Int(binaryAddressPart1, radix: 2)!)
+    let addressPart2 = Double(Int(binaryAddressPart2, radix: 2)!)
+
+    return Double(addressPart1 * 16) + addressPart2
 }
 
 private struct Mem {
@@ -65,16 +152,15 @@ private func getProgram(fileName: String) -> [Program] {
         if line.starts(with: "mask") {
             if prg != nil {
                 prgs.append(prg!)
-
             }
             let mask = line.components(separatedBy: " = ")[1]
             prg = Program(mask: mask, mem: [])
         } else {
-            let ttt = line.components(separatedBy: "[")
-            let ttt2 = ttt[1].components(separatedBy: "]")
-            let ttt3 = ttt[1].components(separatedBy: " = ")
-            let address = Int(ttt2[0])!
-            let value = Int(ttt3[1])!
+            let memTokens = line.components(separatedBy: "[")
+            let memAddressTokens = memTokens[1].components(separatedBy: "]")
+            let memValueTokens = memTokens[1].components(separatedBy: " = ")
+            let address = Int(memAddressTokens[0])!
+            let value = Int(memValueTokens[1])!
             prg!.mem.append(Mem(address: address, value: value))
         }
     }
