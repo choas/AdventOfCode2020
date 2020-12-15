@@ -105,7 +105,7 @@ class AdventOfCode2020Test: XCTestCase {
         XCTAssertEqual(aocDay13Part2(fileName: "aoc13_test.txt"), 1068781)
         // XCTAssertEqual(aocDay13Part2(fileName: "aoc13.txt"), 6568)
     }
-    func testDay14() throws {
+    func zzztestDay14() throws {
         XCTAssertEqual(aocDay14Part1(fileName: "aoc14_test.txt"), 165)
         XCTAssertEqual(aocDay14Part1(fileName: "aoc14.txt"), 10885823581193)
 
@@ -114,5 +114,8 @@ class AdventOfCode2020Test: XCTestCase {
         XCTAssertEqual(address36bit("111100100101011010111101001100010011"), 65052332819)
         XCTAssertEqual(aocDay14Part2(fileName: "aoc14_test2.txt"), 208)
         XCTAssertEqual(aocDay14Part2(fileName: "aoc14.txt"), 3816594901962)
+    }
+    func testDay15() throws {
+        XCTAssertEqual(aocDay15Part1(fileName: "aoc15_test.txt"), 436)
     }
 }
