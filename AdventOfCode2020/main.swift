@@ -11,7 +11,7 @@
 
 import Foundation
 
-print(aocDay15Part1(fileName: "aoc15.txt"))
+print(aocDay15Part1(numbers: [18, 8, 0, 5, 4, 1, 20]))
 
 // TODO day 13 part 2
 // print(aocDay13Part2(fileName: "aoc13.txt"))
